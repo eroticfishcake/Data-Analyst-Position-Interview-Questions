@@ -13,4 +13,11 @@ The main task is to **combine 4 datasets and create a summary table and a graph*
 
 Using Google trends, SimilarWeb, AnswerThePublic, Product Hunt, App Stores, blog posts, competitors and so on, find trends within Wellness, Fitness and Health industry, analyse them and provide the most popular and growing topics. Finally, **find two most potential topics for Wellness Diginal Products with data-driven reasoning**.
 
+## Solutions
 
+For the very first task I decided to use Python, since I am familiar with it's libraries used for data analysis and also Python is extremely versatile. Furthermore, prior to doing this task, I sat down and split this exercise into smaller chunks that had to be done one after the other in order to achieve the result:
+- Interact with google spreadsheets and extract the provided data
+- Clean the data, transform the columns where needed
+- Visualize and analyse the prepared data
+
+Then, I proceeded to create a service account in Google API that allowed me to interact with Google products using python, specifically with Google Spreadsheets.
