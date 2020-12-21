@@ -43,3 +43,4 @@ def getrate(exchangelink):
     rate = float(datapoint[4:-5])                # transform it to float
     return rate
 ```
+Also, the first column had to be renamed to “Advertisers” to match other column names (was needed later for joining the columns together). I have also added the Placement column for each dataset. Finally, using pandas provided tools, I have concatenated all 4 datasets to provide a single dataset containing all the information and saved it as an excel file.
