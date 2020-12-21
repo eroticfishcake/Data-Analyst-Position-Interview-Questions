@@ -20,12 +20,14 @@ For the very first task I decided to use Python, since I am familiar with it's l
 - Clean the data, transform the columns where needed
 - Visualize and analyse the prepared data
 
-Then, I proceeded to create a service account in Google API that allowed me to interact with Google products using python, specifically with Google Spreadsheets. Furthermore, I have tried using already preinstalled libraries in python to retrieve data, but none of them could extract the wanted data since there were two tabs in the given spreadsheet and it would only let me get the info written in the first tab. Therefore, I installed an external library called *sheetfu*, that allowed me to switch between tabs automatically
+Then, I proceeded to create a service account in Google API that allowed me to interact with Google products using python, specifically with Google Spreadsheets. Furthermore, I have tried using already preinstalled libraries in python to retrieve data, but none of them could extract the wanted data since there were two tabs in the given spreadsheet and it would only let me get the info written in the first tab. Therefore, I installed an external library called [sheetfu](https://github.com/socialpoint-labs/sheetfu), that allowed me to switch between tabs automatically
 ```python
 from sheetfu import SpreadsheetApp
+serviceaccountfile = ".json file that you get from google when you create service account"
+googleid = "google id of a wanted spreadsheet"
 spreadsheet = SpreadsheetApp(serviceaccountfile).open_by_id(googleid)
-sheet = spreadsheet.get_sheet_by_name(sheetname) #access the wanted tab
-data_range = sheet.get_data_range()                 #extract range where the data is
-values = data_range.get_values()                    #get values
-values = pd.DataFrame(data = values[8:], columns = values[7]) #put the data into pandas dataframe
+sheet = spreadsheet.get_sheet_by_name(sheetname)      # access the wanted tab
+data_range = sheet.get_data_range()                   # extract range where the data is
+values = data_range.get_values()                      # get values
+values = pd.DataFrame(data = values[8:], columns = values[7]) # put data into pandas dataframe
 ```
