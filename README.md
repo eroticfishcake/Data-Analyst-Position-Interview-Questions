@@ -31,3 +31,15 @@ data_range = sheet.get_data_range()                   # extract range where the 
 values = data_range.get_values()                      # get values
 values = pd.DataFrame(data = values[8:], columns = values[7]) # put data into pandas dataframe
 ```
+Now that we had all the data we needed, it was time for cleaning and transforming. The standard procedure is checking for any NaN/NA values, there weren’t any in this data set. Furthermore, there were couple of things that needed transforming, for example there was one column in the dataset which had revenue in ($), while all the other revenue columns had it in (€). To automate this process, I used my knowledge of web scraping to extract the current USD/EUR ratio and apply it to column, this way the rate of exchange is the most accurate there is and there is no need for human interaction! 
+```python
+exchangelink = "https://www.xe.com/currencycharts/?from=USD&to=EUR"
+
+def getrate(exchangelink):
+    r = requests.get(exchangelink)               # request page access
+    soup = BeautifulSoup(r.text, 'html.parser')  # parse through html
+    data = soup.findAll("td")                    # find td
+    datapoint = str(data[1])                     # get the needed exchange rate
+    rate = float(datapoint[4:-5])                # transform it to float
+    return rate
+```
