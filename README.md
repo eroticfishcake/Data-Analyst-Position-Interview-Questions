@@ -44,3 +44,13 @@ def getrate(exchangelink):
     return rate
 ```
 Also, the first column had to be renamed to “Advertisers” to match other column names (was needed later for joining the columns together). I have also added the Placement column for each dataset. Finally, using pandas provided tools, I have concatenated all 4 datasets to provide a single dataset containing all the information and saved it as an excel file. The process was a bit manual since I had to input columns that had to be seperated before concatenating. I have added my code below, so if you have any suggestions on how to improve and automate it, feel free to message me :blush:
+```python
+def concatdata(values, excel):
+    df1 = values.iloc[:, 0:5]                       # separating columns manually
+    df2 = values.iloc[:, 5:11]                      # separating columns manually
+    df3 = values.iloc[:, 11:17]                     # separating columns manually
+    df4 = values.iloc[:, 17:23]                     # separating columns manually
+    values = pd.concat([df1, df2, df3, df4])        #concatenating 4 datasets together
+    values = values.reset_index(inplace = True)     #reseting previous index
+    return values
+```
