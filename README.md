@@ -9,4 +9,8 @@ You are provided with a Google spreadsheet that consists of 4 data sets, with 3 
 
 The main task is to **combine 4 datasets and create a summary table and a graph**. The table and the graph have to be able to dinamically update when the data source "dataset" updates daily with new data to eventually represent the whole month. Analyse results, provide insights and suggest how to optimize the process.
 
+## Second task
+
+Using Google trends, SimilarWeb, AnswerThePublic, Product Hunt, App Stores, blog posts, competitors and so on, find trends within Wellness, Fitness and Health industry, analyse them and provide the most popular and growing topics. Finally, **find two most potential topics for Wellness Diginal Products with data-driven reasoning**.
+
 
